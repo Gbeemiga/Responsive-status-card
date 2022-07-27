@@ -1,0 +1,200 @@
+
+/* importing fonts from google */
+
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+/* styling the body */
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    background-color: hsl(233, 47%, 7%);
+    height: 100vh;
+    padding: 80px;
+    font-family: 'inter';
+}
+
+
+/* Styling the box */
+
+body .box {
+    display: grid;
+    grid-template-columns:600px 580px;
+}
+
+.box {
+    border-radius: 50px;
+}
+
+
+/* Styling the text */
+
+body .box .general {
+    display: flex;
+    flex-direction: column;
+    padding: 50px;
+    background-color: hsl(244, 38%, 16%);
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+body .box .general .text {
+    width: 100%;
+    height: 100%;
+    /* border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px; */
+}
+
+body .box .general .text h1 {
+    color: white;
+    font-family: 'inter';
+    font-size: 2.6em;
+    margin-bottom: 30px;  
+}
+
+body .box .general .text h1 span {
+    color: hsl(277, 64%, 61%);
+    letter-spacing: 1px;
+}
+
+body .box .general .text p{
+    font-size: 1.08em;
+    color: whitesmoke;
+    line-height: 22px;
+    letter-spacing: .9px;
+    padding-right: 50px;
+    margin-bottom: 50px;
+}
+
+
+/* Styling the figure */
+
+body section {
+    position: relative;
+    /* border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px; */
+}
+
+body section .img {
+    background-image: url(./images/image.jpg);
+    background-position: center;
+    background-size: cover;
+    height: 400px;
+    width: 100%;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+body section .color {
+    background-color: hsl(277, 63%, 52%);
+    opacity: 0.6;
+    height: 100%;
+    width: 100%;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+}
+
+/* styling the values section */
+
+.values {
+    color: whitesmoke;
+    display: flex;
+    justify-content: space-around;
+    gap: 0px;
+    position: relative;
+    left: -40px;
+}
+
+.values span h1 {
+    font-family: "inter";
+    font-size: 1.5em;
+    margin-bottom: 7px;
+}
+
+.values span p {
+    font-family: 'lexend deca';
+    text-transform: uppercase;
+    font-weight: 300;
+    font-size: small;
+    letter-spacing: .2em;
+}
+
+/* responsivity */
+
+@media screen and (max-width:900px)  {
+    html {
+        height: 100vh;
+        padding: 0px;
+    }
+
+    body {
+        min-height: 100vh;
+    }
+
+    body .box {
+        display: grid;
+        grid-template-rows:350px,1fr;
+        grid-template-columns: 400px;
+        grid-template-areas: "amaka"
+                             "ngozi";
+    }
+
+    body section {
+        grid-area: amaka;
+    }
+
+    body section .img {
+        border-top-right-radius: 10px;
+        border-bottom-left-radius: 0px;
+        border-top-left-radius: 10px;
+        border-bottom-right-radius: 0px;
+    }
+
+    body section .color {
+        border-top-right-radius: 10px;
+        border-bottom-left-radius: 0px;
+        border-top-left-radius: 10px;
+        border-bottom-right-radius: 0px;
+    }
+
+    body .box .general {
+        display: flex;
+        align-content: center;
+        grid-area: ngozi;
+        border-top-right-radius: 0px;
+        border-bottom-left-radius: 10px;
+        border-top-left-radius: 0px;
+        border-bottom-right-radius: 10px;
+    }
+
+    body .box .general .text {
+        text-align: center;
+    }
+
+    body .box .general .text p {
+        margin-top: 50px;
+        padding-right: 0px;
+    }
+    
+    .values {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+        position: relative;
+        left: 0px;
+    }
+
+    .values h1 {
+        text-align: center;
+    }
+}
